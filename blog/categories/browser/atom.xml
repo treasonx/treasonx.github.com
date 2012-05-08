@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[TreasonX Development Blog]]></title>
-  <link href="http://treasonx.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: browser | TreasonX Development Blog]]></title>
+  <link href="http://treasonx.github.com/blog/categories/browser/atom.xml" rel="self"/>
   <link href="http://treasonx.github.com/"/>
   <updated>2012-05-08T07:19:21-04:00</updated>
   <id>http://treasonx.github.com/</id>
@@ -20,7 +20,7 @@
     <id>http://treasonx.github.com/blog/2012/05/08/firefox-localstorage-bug</id>
     <content type="html"><![CDATA[<p>There is a small bug in firefox which may look like a data loss issue when using localStorage. I have filed a <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=746272">bug 746272</a> and they have fixed the issue but this will be with us as web developers for a long time.</p>
 
-<p>The bug shows up if you do the following. If your first interaction with localStorage is a removeItem you will not get the proper length from the localStorage object. It will seem as though all of the items in localStorage have been deleted. This is not the case, the browser just hasn&#8217;t updated its cache with the contents of localStoage.</p>
+<p>The bug shows up if you do the following. If your first interaction with localStorage is a removeItem you will not get the proper length from the localStorage object. It will seem as though all of the items in localStorage have been deleted. This is not the case, the browser just hasn't updated its cache with the contents of localStoage.</p>
 
 <p><strong>Work Around</strong></p>
 
