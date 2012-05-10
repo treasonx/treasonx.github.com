@@ -2,14 +2,18 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://treasonx.github.com/blog/2012/05/08/firefox-localstorage-bug/</loc>
-        <lastmod>2012-05-08T07:18:59-04:00</lastmod>
+        <lastmod>2012-05-10T06:36:59-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://treasonx.github.com/404.html</loc>
+        <lastmod>2012-05-10T06:31:26-04:00</lastmod>
     </url>
     <url>
         <loc>http://treasonx.github.com/blog/archives/</loc>
-        <lastmod>2012-05-08T07:18:59-04:00</lastmod>
+        <lastmod>2012-05-10T06:36:59-04:00</lastmod>
     </url>
     <url>
         <loc>http://treasonx.github.com/</loc>
-        <lastmod>2012-05-08T07:18:59-04:00</lastmod>
+        <lastmod>2012-05-10T06:36:59-04:00</lastmod>
     </url>
 </urlset>

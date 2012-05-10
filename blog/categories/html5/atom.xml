@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: html5 | TreasonX Development Blog]]></title>
+  <title><![CDATA[Category: html5 | {TRX} James Morrin]]></title>
   <link href="http://treasonx.github.com/blog/categories/html5/atom.xml" rel="self"/>
   <link href="http://treasonx.github.com/"/>
-  <updated>2012-05-08T07:26:27-04:00</updated>
+  <updated>2012-05-10T06:51:33-04:00</updated>
   <id>http://treasonx.github.com/</id>
   <author>
-    <name><![CDATA[James Morring]]></name>
+    <name><![CDATA[James Morrin]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title type="html"><![CDATA[FireFox LocalStorage Bug]]></title>
+    <title type="html"><![CDATA[Firefox LocalStorage Bug]]></title>
     <link href="http://treasonx.github.com/blog/2012/05/08/firefox-localstorage-bug/"/>
     <updated>2012-05-08T07:04:00-04:00</updated>
     <id>http://treasonx.github.com/blog/2012/05/08/firefox-localstorage-bug</id>
