@@ -118,14 +118,14 @@
     }
 
 
-    pre code:before {
+    pre code .line:before {
       color: #aaa;
       content: counter(linenumbers);
       counter-increment: linenumbers;
-      left: -3ex;
+      left: -2.7ex;
       position: absolute;
-      text-align: right;
-      width: 2.5ex;
+      text-align: center;
+      width: 2.6ex;
       -webkit-touch-callout: none;
       -webkit-user-select: none;
       -khtml-user-select: none;
@@ -217,7 +217,8 @@ will need to build our markdown live preview task. Install the modules in the
 root of your home directory with the following commands.
 
 </p>
-<pre><code><span class="title">npm</span> install grunt-reload<br><span class="title">npm</span> install grunt-markdown</code></pre>
+<pre><code><span class="line"><span class="title">npm</span> install grunt-reload</span>
+<span class="line"><span class="title">npm</span> install grunt-markdown</span></code></pre>
 <h4><a href="https://github.com/webxl/grunt-reload">grunt-reload</a></h4>
 <p>Grunt reload tells the browser to refresh itself when a grunt watch task 
 notices there has been a change to the watched files. There are various ways you 
@@ -236,15 +237,67 @@ produce markdown with properly formatted code blocks.
 use as well as combinations of tasks which produce the desired behavior.
 
 </p>
-<pre><code><span class="title">touch</span> grunt.js</code></pre>
+<pre><code><span class="line"><span class="title">touch</span> grunt.js</span></code></pre>
 <p>Open the <code>grunt.js</code> file in your editor of choice and enter the following.
 
 </p>
-<pre><code class="lang-javascript"><br>module.exports = <span class="function"><span class="keyword">function</span> <span class="params">(grunt)</span> {</span><br>  <span class="string">'use strict'</span>;<br><br>  <span class="comment">//initialize grunt with config</span><br>  grunt.initConfig({<br>    <span class="comment">//configure grunt-reload</span><br>    reload: {<br>      port: <span class="number">35729</span>, <span class="comment">// LR default</span><br>      liveReload: {},<br>      proxy: {<br>        host: <span class="string">'localhost'</span><br>      }<br>    },<br>    markdown: {<br>      <span class="comment">//configure grunt-markdown with a notes config</span><br>      notes: {<br>        <span class="comment">//raw markdown files</span><br>        files: [<span class="string">'Dropbox/Notes/*.md'</span>],<br>        <span class="comment">//which html template to wrap the compiled markdown</span><br>        template: <span class="string">'Dropbox/HTMLNotes/assets/blog.html'</span>,<br>        <span class="comment">//compiled HTML goes here</span><br>        dest: <span class="string">'Dropbox/HTMLNotes'</span>,<br>        options: {<br>          <span class="comment">//we always want GFM</span><br>          gfm: <span class="literal">true</span>,<br>          <span class="comment">//will try to use code block markup to highlight</span><br>          highlight: <span class="string">'manual'</span><br>        }<br>      }<br>    },<br>    server: {<br>      port: <span class="number">8000</span>,<br>      base: <span class="string">'~/Dropbox/HTMLNotes'</span><br>    },<br>    watch: {<br>      <span class="comment">//Watch the notes and if they change reload</span><br>      notes: {<br>        files: [<span class="string">'Dropbox/Notes/*.md'</span>],<br>        tasks: <span class="string">'markdown:notes reload'</span><br>      }<br>    }<br>  });<br><br>  <span class="comment">//Load the extra tasks from our npm modules</span><br>  grunt.loadNpmTasks(<span class="string">'grunt-markdown'</span>);<br>  grunt.loadNpmTasks(<span class="string">'grunt-reload'</span>);<br><br>  <span class="comment">//Register a task which will combine tasks</span><br>  grunt.registerTask(<span class="string">'previewNotes'</span>, <span class="string">'When mardown notes change reload preview'</span>,<br>    <span class="string">'markdown:notes server:notes reload watch:notes'</span>);<br><br>};</code></pre>
+<pre><code class="lang-javascript"><span class="line"></span>
+<span class="line">module.exports = <span class="function"><span class="keyword">function</span> <span class="params">(grunt)</span> {</span></span>
+<span class="line">  <span class="string">'use strict'</span>;</span>
+<span class="line"></span>
+<span class="line">  <span class="comment">//initialize grunt with config</span></span>
+<span class="line">  grunt.initConfig({</span>
+<span class="line">    <span class="comment">//configure grunt-reload</span></span>
+<span class="line">    reload: {</span>
+<span class="line">      port: <span class="number">35729</span>, <span class="comment">// LR default</span></span>
+<span class="line">      liveReload: {},</span>
+<span class="line">      proxy: {</span>
+<span class="line">        host: <span class="string">'localhost'</span></span>
+<span class="line">      }</span>
+<span class="line">    },</span>
+<span class="line">    markdown: {</span>
+<span class="line">      <span class="comment">//configure grunt-markdown with a notes config</span></span>
+<span class="line">      notes: {</span>
+<span class="line">        <span class="comment">//raw markdown files</span></span>
+<span class="line">        files: [<span class="string">'Dropbox/Notes/*.md'</span>],</span>
+<span class="line">        <span class="comment">//which html template to wrap the compiled markdown</span></span>
+<span class="line">        template: <span class="string">'Dropbox/HTMLNotes/assets/blog.html'</span>,</span>
+<span class="line">        <span class="comment">//compiled HTML goes here</span></span>
+<span class="line">        dest: <span class="string">'Dropbox/HTMLNotes'</span>,</span>
+<span class="line">        options: {</span>
+<span class="line">          <span class="comment">//we always want GFM</span></span>
+<span class="line">          gfm: <span class="literal">true</span>,</span>
+<span class="line">          <span class="comment">//will try to use code block markup to highlight</span></span>
+<span class="line">          highlight: <span class="string">'manual'</span></span>
+<span class="line">        }</span>
+<span class="line">      }</span>
+<span class="line">    },</span>
+<span class="line">    server: {</span>
+<span class="line">      port: <span class="number">8000</span>,</span>
+<span class="line">      base: <span class="string">'~/Dropbox/HTMLNotes'</span></span>
+<span class="line">    },</span>
+<span class="line">    watch: {</span>
+<span class="line">      <span class="comment">//Watch the notes and if they change reload</span></span>
+<span class="line">      notes: {</span>
+<span class="line">        files: [<span class="string">'Dropbox/Notes/*.md'</span>],</span>
+<span class="line">        tasks: <span class="string">'markdown:notes reload'</span></span>
+<span class="line">      }</span>
+<span class="line">    }</span>
+<span class="line">  });</span>
+<span class="line"></span>
+<span class="line">  <span class="comment">//Load the extra tasks from our npm modules</span></span>
+<span class="line">  grunt.loadNpmTasks(<span class="string">'grunt-markdown'</span>);</span>
+<span class="line">  grunt.loadNpmTasks(<span class="string">'grunt-reload'</span>);</span>
+<span class="line"></span>
+<span class="line">  <span class="comment">//Register a task which will combine tasks</span></span>
+<span class="line">  grunt.registerTask(<span class="string">'previewNotes'</span>, <span class="string">'When mardown notes change reload preview'</span>,</span>
+<span class="line">    <span class="string">'markdown:notes server:notes reload watch:notes'</span>);</span>
+<span class="line"></span>
+<span class="line">};</span></code></pre>
 <p>Save the file and then enter the following command. 
 
 </p>
-<pre><code><span class="title">grunt</span> previewNotes</code></pre>
+<pre><code><span class="line"><span class="title">grunt</span> previewNotes</span></code></pre>
 <p>Open your browser and checkout the HTML goodness! Make changes to your
 markdown, save and watch the browser automatically reload!
 
