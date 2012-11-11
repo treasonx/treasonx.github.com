@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>James Morrin</title>
+
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="assets/stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="assets/stylesheets/app.css">
+  <link rel="stylesheet" href="assets/stylesheets/code/solarized_dark.css">
+
+  <style type="text/css" media="screen">
+    .twtter {
+      margin: auto;
+    }
+
+    .twitter img {
+      display: block;
+      border-radius: 50px;
+      margin: 0 auto 20px auto;
+    }
+
+    .twitter iframe {
+      display: block;
+      margin: 0 auto 15px;
+    }
+
+    header {
+      margin: 25px 0;
+    }
+
+    .gravatarContainer {
+      float:left;
+    }
+
+    .gravatarContainer iframe {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .gravatarContainer a {
+      color: white;
+    }
+
+    .gravatar {
+      border-radius: 50px;
+      display: block;
+      margin: 0 auto 9px;
+    }
+
+    .bubbleBox {
+      display:inline-block;
+    }
+
+
+    .bubble{
+        background-color: #F2F2F2;
+        border-radius: 5px;
+        box-shadow: 0 0 6px #B2B2B2;
+        display: inline-block;
+        padding: 10px 18px;
+        position: relative;
+        vertical-align: top;
+    }
+
+    .bubble::before {
+        background-color: #F2F2F2;
+        content: "\00a0";
+        display: block;
+        height: 16px;
+        position: absolute;
+        top: 20px;
+        transform:             rotate( 29deg ) skew( -35deg );
+            -moz-transform:    rotate( 29deg ) skew( -35deg );
+            -ms-transform:     rotate( 29deg ) skew( -35deg );
+            -o-transform:      rotate( 29deg ) skew( -35deg );
+            -webkit-transform: rotate( 29deg ) skew( -35deg );
+        width:  20px;
+    }
+
+    .me {
+        float: left;   
+        margin: 5px 45px 5px 20px;         
+    }
+
+    .me::before {
+        box-shadow: -2px 2px 2px 0 rgba( 178, 178, 178, .4 );
+        left: -9px;           
+    }
+
+    code {
+      margin: 0 2px;
+      padding: 0px 5px;
+      border: 1px solid #eaeaea;
+      background-color: #f8f8f8;
+      border-radius: 3px;
+    }
+
+
+    pre {
+      border-left: 3ex solid #eee;
+      position: relative;
+      counter-reset: linenumbers;
+    }
+
+
+    pre code:before {
+      color: #aaa;
+      content: counter(linenumbers);
+      counter-increment: linenumbers;
+      left: -3ex;
+      position: absolute;
+      text-align: right;
+      width: 2.5ex;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+  }
+
+  </style>
+</head>
+<body>
+
+  <!-- Nav Bar -->
+
+  <div class="row">
+    <div class="twelve columns">
+      <!--
+      <ul class="nav-bar">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+      </ul>
+      -->
+      <header>
+        <div class="bubbleBox">
+          <div class="gravatarContainer">
+          <img class="gravatar" alt="gravatar" src="http://www.gravatar.com/avatar/cb8071dc469f7cb3252e8b019d2bf917">
+
+          <a href="https://twitter.com/treasonx" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @treasonx</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
+          <div class="bubble me ohhai">
+            <h1>Oh Hai! I'm James.</h1> 
+            <strong>This is not a blog...</strong>
+          </div>
+          <br style="clear:both">
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <!-- End Nav -->
+
+
+  <!-- Main Page Content and Sidebar -->
+
+  <div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="nine columns" role="content">
+
+      <article>
+        <h2>Markdown Preview using Grunt</h2>
+<p><img src="assets/imgs/grunt.png" width="200" style="float:left;">
+I love <a href="http://daringfireball.net/projects/markdown/">markdown</a> especially
+<a href="http://github.github.com/github-flavored-markdown/">GFM</a>. It allows me to
+quickly captures notes and ideas which I can then later compile to HTML and
+share with people. I do almost all of my text editing in <a href="http://www.vim.org/">vim</a> 
+so markdown is perfect for producing great looking articles and content in my 
+editor of choice! 
+
+</p>
+<p>While editing markdown I find it helpful to review the changes you have made in
+a preview of what the final version will look like. There are various scripts
+and apps that help with markdown preview. But nothing that really seemed to fit 
+my workflow and skillset. I figured I would take a look at some of the tools I 
+use to automate my development workflow and see if they can be applied to my 
+markdown workflow. A couple of requirements I had for the system. It had to 
+be JavaScript based! JavaScript is my language of choice so I wanted something 
+that would be easy for me to modify and extend. I also wanted it to be portable 
+across all of my machines. I like to keep my environment light so I can become 
+productive on a new machine as quickly as possible. 
+
+</p>
+<h3>What Do You Mean Live Reload?</h3>
+<iframe style="margin: 0 auto;" width="640" height="480" src="http://www.youtube.com/embed/fc45xgh45dM" frameborder="0" allowfullscreen></iframe>
+
+<h3>What this article is about</h3>
+<p>This article is about how I used <a href="http://www.gruntjs.com">Grunt</a> and a couple of 
+Grunt tasks to automate my markdown workflow. This article is not intended to 
+be a tutorial on how to use Grunt! If you are interested in learning more 
+about Grunt checkout the <a href="http://www.gruntjs.com">website</a>.
+
+</p>
+<h3>Prerequisites</h3>
+<p>You will need to have NodeJS and Grunt installed on your machine. Once you have NodeJS and Grunt installed there are 2 <a href="http://www.npmjs.org">NPM</a> modules which we 
+will need to build our markdown live preview task. Install the modules in the
+root of your home directory with the following commands.
+
+</p>
+<pre><code><span class="title">npm</span> install grunt-reload<br><span class="title">npm</span> install grunt-markdown</code></pre>
+<h4><a href="https://github.com/webxl/grunt-reload">grunt-reload</a></h4>
+<p>Grunt reload tells the browser to refresh itself when a grunt watch task 
+notices there has been a change to the watched files. There are various ways you 
+can get the reload behavior in your browser. I have chosen to use a chrome plugin 
+<a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-">live reload</a>
+
+</p>
+<h4><a href="https://www.github.com/treasonx/grunt-markdown">grunt-markdown</a></h4>
+<p>I developed this grunt task to generate documentation from markdown files. It
+supports GFM with code highlighting. It is critical for my markdown task to
+produce markdown with properly formatted code blocks. 
+
+</p>
+<h3>Grunt File</h3>
+<p>We will need to define a gruntfile. This gruntfile will define the tasks we will 
+use as well as combinations of tasks which produce the desired behavior.
+
+</p>
+<pre><code><span class="title">touch</span> grunt.js</code></pre>
+<p>Open the <code>grunt.js</code> file in your editor of choice and enter the following.
+
+</p>
+<pre><code class="lang-javascript"><br>module.exports = <span class="function"><span class="keyword">function</span> <span class="params">(grunt)</span> {</span><br>  <span class="string">'use strict'</span>;<br><br>  <span class="comment">//initialize grunt with config</span><br>  grunt.initConfig({<br>    <span class="comment">//configure grunt-reload</span><br>    reload: {<br>      port: <span class="number">35729</span>, <span class="comment">// LR default</span><br>      liveReload: {},<br>      proxy: {<br>        host: <span class="string">'localhost'</span><br>      }<br>    },<br>    markdown: {<br>      <span class="comment">//configure grunt-markdown with a notes config</span><br>      notes: {<br>        <span class="comment">//raw markdown files</span><br>        files: [<span class="string">'Dropbox/Notes/*.md'</span>],<br>        <span class="comment">//which html template to wrap the compiled markdown</span><br>        template: <span class="string">'Dropbox/HTMLNotes/assets/blog.html'</span>,<br>        <span class="comment">//compiled HTML goes here</span><br>        dest: <span class="string">'Dropbox/HTMLNotes'</span>,<br>        options: {<br>          <span class="comment">//we always want GFM</span><br>          gfm: <span class="literal">true</span>,<br>          <span class="comment">//will try to use code block markup to highlight</span><br>          highlight: <span class="string">'manual'</span><br>        }<br>      }<br>    },<br>    server: {<br>      port: <span class="number">8000</span>,<br>      base: <span class="string">'~/Dropbox/HTMLNotes'</span><br>    },<br>    watch: {<br>      <span class="comment">//Watch the notes and if they change reload</span><br>      notes: {<br>        files: [<span class="string">'Dropbox/Notes/*.md'</span>],<br>        tasks: <span class="string">'markdown:notes reload'</span><br>      }<br>    }<br>  });<br><br>  <span class="comment">//Load the extra tasks from our npm modules</span><br>  grunt.loadNpmTasks(<span class="string">'grunt-markdown'</span>);<br>  grunt.loadNpmTasks(<span class="string">'grunt-reload'</span>);<br><br>  <span class="comment">//Register a task which will combine tasks</span><br>  grunt.registerTask(<span class="string">'previewNotes'</span>, <span class="string">'When mardown notes change reload preview'</span>,<br>    <span class="string">'markdown:notes server:notes reload watch:notes'</span>);<br><br>};</code></pre>
+<p>Save the file and then enter the following command. 
+
+</p>
+<pre><code><span class="title">grunt</span> previewNotes</code></pre>
+<p>Open your browser and checkout the HTML goodness! Make changes to your
+markdown, save and watch the browser automatically reload!
+
+</p>
+<h3>Conclusion</h3>
+<p>Grunt is awesome for the automation of common tasks during JavaScript
+application development. The Grunt framework provides a simple way to define
+tasks which can be chained together to do more complex tasks. This framework is
+also useful for automating common tasks outside of application development.
+This grunt live preview is just one example of how you can leverage Grunt to
+make life a little easier! 
+
+
+</p>
+
+
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="treasonx" data-size="small">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <br>
+        <!-- Place this tag where you want the +1 button to render. -->
+        <div class="g-plusone" data-size="tall" data-annotation="inline" data-width="120"></div>
+        
+        <!-- Place this tag after the last +1 button tag. -->
+        <script type="text/javascript">
+            (function() {
+                 var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                     po.src = 'https://apis.google.com/js/plusone.js';
+                         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                           })();
+                         </script>
+        <hr>
+      </article>
+      <article>
+ <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'treasonx'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+      </article>
+
+    </div>
+
+    <!-- End Main Content -->
+
+
+
+    <!-- End Sidebar -->
+  </div>
+
+  <!-- End Main Content and Sidebar -->
+
+
+  <!-- Footer -->
+
+  <footer class="row">
+    <div class="twelve columns">
+      <hr />
+      <div class="row">
+        <div class="six columns">
+          <p>&copy; James Morrin</p>
+        </div>
+        <div class="six columns">
+
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- End Footer -->
+  
+</body>
+</html>
