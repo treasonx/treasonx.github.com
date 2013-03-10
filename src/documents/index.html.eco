@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<h3>Articles</h3>
+<% for post in @getCollection("posts").toJSON(): %>
+<div class="postitem">
+  <a href="<%= post.url %>">
+    <img src="<%= post.image %>" width="75" alt="<%=post.title %>">
+  </a>
+  <a href="<%= post.url %>"><%= post.title %> </a>
+  <h6 class="subheader">tl;dr <%= post.tldr %></h6>
+</div>
+<% end %>

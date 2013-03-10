@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head> 
+    <title>James Morrin</title>
+    <%- @getBlock("meta").toHTML() %>
+    <%- @getBlock("styles").toHTML() %>
+    <link href="/styles/normalize.css" rel="stylesheet">
+    <link href="/styles/foundation.css" rel="stylesheet">
+    <link href="/styles/solarized_dark.css" rel="stylesheet">
+    <link href="/styles/font-awesome.min.css" rel="stylesheet">
+    <link href="/styles/custom.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div id="wrapper">
+    <nav class="top-bar fixed">
+      <ul class="title-area">
+        <li class="name"><h1 style="display:inline;"><a href="#">James Morrin</a></h1></li>
+        <!--<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>-->
+      </ul>
+    </nav>
+      <main>
+      <div class="row">
+        <div class="small-8 large-8 large-centered columns">
+          <%- @content %>
+        </div>
+      </div>
+      </main>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="small-8 large-8 large-centered columns">
+          <img class="gravatar" alt="gravatar" src="http://www.gravatar.com/avatar/cb8071dc469f7cb3252e8b019d2bf917">
+          <ul class="social">
+            <li class="github">
+              <a href="http://github.com/treasonx" target="_blank">
+                <i class="icon-github-alt icon-2x"></i>
+              </a>
+            </li>
+            <li class="googleplus">
+              <a href="https://plus.google.com/106674157563775429543" target="_blank" >
+                <i class="icon-google-plus icon-2x"></i>
+              </a>
+            </li>
+            <li class="twitter">
+              <a href="http://twitter.com/treasonx" target="_blank" >
+                <i class="icon-twitter icon-2x"></i>
+              </a>
+            </li>
+            <li class="linkedin">
+              <a href="http://www.linkedin.com/in/jmorrrin" target="_blank" >
+                <i class="icon-linkedin-sign icon-2x"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </footer>
+    <script src="/js/jquery.js" type="text/javascript"></script>
+    <script src="/js/custom.modernizr.js" type="text/javascript"></script>
+    <script src="/js/foundation.min.js" type="text/javascript"></script>
+    <script src="/js/foundation/foundation.topbar.js" type="text/javascript"></script>
+    <script src="/js/jquery.js" type="text/javascript"></script>
+    <%- @getBlock("scripts").toHTML() %>
+  </body>
+</html>
