@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+  <head> 
+    <title>James Morrin</title>
+    <meta http-equiv="X-Powered-By" content="DocPad"/>
+    
+    <link href="/styles/normalize.css" rel="stylesheet">
+    <link href="/styles/foundation.css" rel="stylesheet">
+    <link href="/styles/solarized_dark.css" rel="stylesheet">
+    <link href="/styles/font-awesome.min.css" rel="stylesheet">
+    <link href="/styles/custom.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div id="wrapper">
+    <nav class="top-bar fixed">
+      <ul class="title-area">
+        <li class="name"><h1 style="display:inline;"><a href="#">James Morrin</a></h1></li>
+        <!--<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>-->
+      </ul>
+    </nav>
+      <main>
+      <div class="row">
+        <div class="small-8 large-8 large-centered columns">
+          <h1>Grunt Markdown</h1>
+<div><h2>Markdown Preview using Grunt</h2>
+<p><img src="/img/grunt.png" width="200" style="float:left;">
+I love <a href="http://daringfireball.net/projects/markdown/">markdown</a> especially
+<a href="http://github.github.com/github-flavored-markdown/">GFM</a>. It allows me to
+quickly captures notes and ideas which I can then later compile to HTML and
+share with people. I do almost all of my text editing in <a href="http://www.vim.org/">vim</a> 
+so markdown is perfect for producing great looking articles and content in my 
+editor of choice! </p>
+<p>While editing markdown I find it helpful to review the changes you have made in
+a preview of what the final version will look like. There are various scripts
+and apps that help with markdown preview. But nothing that really seemed to fit 
+my workflow and skillset. I figured I would take a look at some of the tools I 
+use to automate my development workflow and see if they can be applied to my 
+markdown workflow. A couple of requirements I had for the system. It had to 
+be JavaScript based! JavaScript is my language of choice so I wanted something 
+that would be easy for me to modify and extend. I also wanted it to be portable 
+across all of my machines. I like to keep my environment light so I can become 
+productive on a new machine as quickly as possible. </p>
+<h3>What Do You Mean Live Reload?</h3>
+<iframe style="margin: 0 auto;" width="640" height="480" src="http://www.youtube.com/embed/fc45xgh45dM" frameborder="0" allowfullscreen></iframe>
+
+<h3>What this article is about</h3>
+<p>This article is about how I used <a href="http://www.gruntjs.com">Grunt</a> and a couple of 
+Grunt tasks to automate my markdown workflow. This article is not intended to 
+be a tutorial on how to use Grunt! If you are interested in learning more 
+about Grunt checkout the <a href="http://www.gruntjs.com">website</a>.</p>
+<h3>Prerequisites</h3>
+<p>You will need to have NodeJS and Grunt installed on your machine. Once you have NodeJS and Grunt installed there are 2 <a href="http://www.npmjs.org">NPM</a> modules which we 
+will need to build our markdown live preview task. Install the modules in the
+root of your home directory with the following commands.</p>
+<pre><code><span class="line"><span class="title">npm</span> install grunt-reload</span>
+<span class="line"><span class="title">npm</span> install grunt-markdown</span></code></pre>
+<h4><a href="https://github.com/webxl/grunt-reload">grunt-reload</a></h4>
+<p>Grunt reload tells the browser to refresh itself when a grunt watch task 
+notices there has been a change to the watched files. There are various ways you 
+can get the reload behavior in your browser. I have chosen to use a chrome plugin 
+<a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-">live reload</a></p>
+<h4><a href="https://www.github.com/treasonx/grunt-markdown">grunt-markdown</a></h4>
+<p>I developed this grunt task to generate documentation from markdown files. It
+supports GFM with code highlighting. It is critical for my markdown task to
+produce markdown with properly formatted code blocks. </p>
+<h3>Grunt File</h3>
+<p>We will need to define a gruntfile. This gruntfile will define the tasks we will 
+use as well as combinations of tasks which produce the desired behavior.</p>
+<pre><code><span class="line"><span class="title">touch</span> grunt.js</span></code></pre>
+<p>Open the <code>grunt.js</code> file in your editor of choice and enter the following.</p>
+<pre><code class="lang-javascript"><span class="line"></span>
+<span class="line">module.exports = function (grunt) {</span>
+<span class="line">  <span class="string">'use strict'</span>;</span>
+<span class="line"></span>
+<span class="line">  //initialize grunt with config</span>
+<span class="line">  grunt.initConfig({</span>
+<span class="line">    //configure grunt-reload</span>
+<span class="line">    <span class="method">reload:</span> {</span>
+<span class="line">      <span class="method">port:</span> <span class="number">35729</span>, // <span class="class">LR</span> default</span>
+<span class="line">      <span class="method">liveReload:</span> {},</span>
+<span class="line">      <span class="method">proxy:</span> {</span>
+<span class="line">        <span class="method">host:</span> <span class="string">'localhost'</span></span>
+<span class="line">      }</span>
+<span class="line">    },</span>
+<span class="line">    <span class="method">markdown:</span> {</span>
+<span class="line">      //configure grunt-markdown with a notes config</span>
+<span class="line">      <span class="method">notes:</span> {</span>
+<span class="line">        //raw markdown files</span>
+<span class="line">        <span class="method">files:</span> [<span class="string">'Dropbox/Notes/*.md'</span>],</span>
+<span class="line">        //which html template to wrap the compiled markdown</span>
+<span class="line">        <span class="method">template:</span> <span class="string">'Dropbox/HTMLNotes/assets/blog.html'</span>,</span>
+<span class="line">        //compiled <span class="class">HTML</span> goes here</span>
+<span class="line">        <span class="method">dest:</span> <span class="string">'Dropbox/HTMLNotes'</span>,</span>
+<span class="line">        <span class="method">options:</span> {</span>
+<span class="line">          //we always want <span class="class">GFM</span></span>
+<span class="line">          <span class="method">gfm:</span> <span class="keyword">true</span>,</span>
+<span class="line">          //will try to use code block markup to highlight</span>
+<span class="line">          <span class="method">highlight:</span> <span class="string">'manual'</span></span>
+<span class="line">        }</span>
+<span class="line">      }</span>
+<span class="line">    },</span>
+<span class="line">    <span class="method">server:</span> {</span>
+<span class="line">      <span class="method">port:</span> <span class="number">8000</span>,</span>
+<span class="line">      <span class="method">base:</span> <span class="string">'~/Dropbox/HTMLNotes'</span></span>
+<span class="line">    },</span>
+<span class="line">    <span class="method">watch:</span> {</span>
+<span class="line">      //<span class="class">Watch</span> the notes and if they change reload</span>
+<span class="line">      <span class="method">notes:</span> {</span>
+<span class="line">        <span class="method">files:</span> [<span class="string">'Dropbox/Notes/*.md'</span>],</span>
+<span class="line">        <span class="method">tasks:</span> <span class="string">'markdown:notes reload'</span></span>
+<span class="line">      }</span>
+<span class="line">    }</span>
+<span class="line">  });</span>
+<span class="line"></span>
+<span class="line">  //<span class="class">Load</span> the extra tasks from our npm modules</span>
+<span class="line">  grunt.loadNpmTasks(<span class="string">'grunt-markdown'</span>);</span>
+<span class="line">  grunt.loadNpmTasks(<span class="string">'grunt-reload'</span>);</span>
+<span class="line"></span>
+<span class="line">  //<span class="class">Register</span> a task which will combine tasks</span>
+<span class="line">  grunt.registerTask(<span class="string">'previewNotes'</span>, <span class="string">'When mardown notes change reload preview'</span>,</span>
+<span class="line">    <span class="string">'markdown:notes server:notes reload watch:notes'</span>);</span>
+<span class="line"></span>
+<span class="line">};</span></code></pre>
+<p>Save the file and then enter the following command. </p>
+<pre><code><span class="line"><span class="title">grunt</span> previewNotes</span></code></pre>
+<p>Open your browser and checkout the HTML goodness! Make changes to your
+markdown, save and watch the browser automatically reload!</p>
+<h3>Conclusion</h3>
+<p>Grunt is awesome for the automation of common tasks during JavaScript
+application development. The Grunt framework provides a simple way to define
+tasks which can be chained together to do more complex tasks. This framework is
+also useful for automating common tasks outside of application development.
+This grunt live preview is just one example of how you can leverage Grunt to
+make life a little easier!</p>
+</div>
+        </div>
+      </div>
+      </main>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="small-8 large-8 large-centered columns">
+          <img class="gravatar" alt="gravatar" src="http://www.gravatar.com/avatar/cb8071dc469f7cb3252e8b019d2bf917">
+          <ul class="social">
+            <li class="github">
+              <a href="http://github.com/treasonx" target="_blank">
+                <i class="icon-github-alt icon-2x"></i>
+              </a>
+            </li>
+            <li class="googleplus">
+              <a href="https://plus.google.com/106674157563775429543" target="_blank" >
+                <i class="icon-google-plus icon-2x"></i>
+              </a>
+            </li>
+            <li class="twitter">
+              <a href="http://twitter.com/treasonx" target="_blank" >
+                <i class="icon-twitter icon-2x"></i>
+              </a>
+            </li>
+            <li class="linkedin">
+              <a href="http://www.linkedin.com/in/jmorrrin" target="_blank" >
+                <i class="icon-linkedin-sign icon-2x"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </footer>
+    <script src="/js/jquery.js" type="text/javascript"></script>
+    <script src="/js/custom.modernizr.js" type="text/javascript"></script>
+    <script src="/js/foundation.min.js" type="text/javascript"></script>
+    <script src="/js/foundation/foundation.topbar.js" type="text/javascript"></script>
+    <script src="/js/jquery.js" type="text/javascript"></script>
+    
+  </body>
+</html>

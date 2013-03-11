@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head> 
+    <title>James Morrin</title>
+    <meta http-equiv="X-Powered-By" content="DocPad"/>
+    
+    <link href="/styles/normalize.css" rel="stylesheet">
+    <link href="/styles/foundation.css" rel="stylesheet">
+    <link href="/styles/solarized_dark.css" rel="stylesheet">
+    <link href="/styles/font-awesome.min.css" rel="stylesheet">
+    <link href="/styles/custom.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div id="wrapper">
+    <nav class="top-bar fixed">
+      <ul class="title-area">
+        <li class="name"><h1 style="display:inline;"><a href="#">James Morrin</a></h1></li>
+        <!--<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>-->
+      </ul>
+    </nav>
+      <main>
+      <div class="row">
+        <div class="small-8 large-8 large-centered columns">
+          <h1>Firefox LocalStorage Bug</h1>
+<div><p>There is a small bug in firefox which may look like a data loss issue when
+using localStorage. I have filed a <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=746272">bug 746272</a> and they have fixed the issue but
+this will be with us as web developers for a long time.
+The bug shows up if you do the following. If your first interaction with
+localStorage is a removeItem you will not get the proper length from the
+localStorage object. It will seem as though all of the items in localStorage
+have been deleted. This is not the case, the browser just hasn&#39;t updated its
+cache with the contents of localStoage.</p>
+<h3>Work Around</h3>
+<p>The workaround for now is to get the length of the localStorage object before
+any other operation with localStorage so that it works as expected.
+This bug was tricky to isolate in my web app and it looked like I was losing
+user data when the page was reloaded. I boiled it down to a simple test case
+and the folks at mozilla had it fixed right away.</p>
+</div>
+        </div>
+      </div>
+      </main>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="small-8 large-8 large-centered columns">
+          <img class="gravatar" alt="gravatar" src="http://www.gravatar.com/avatar/cb8071dc469f7cb3252e8b019d2bf917">
+          <ul class="social">
+            <li class="github">
+              <a href="http://github.com/treasonx" target="_blank">
+                <i class="icon-github-alt icon-2x"></i>
+              </a>
+            </li>
+            <li class="googleplus">
+              <a href="https://plus.google.com/106674157563775429543" target="_blank" >
+                <i class="icon-google-plus icon-2x"></i>
+              </a>
+            </li>
+            <li class="twitter">
+              <a href="http://twitter.com/treasonx" target="_blank" >
+                <i class="icon-twitter icon-2x"></i>
+              </a>
+            </li>
+            <li class="linkedin">
+              <a href="http://www.linkedin.com/in/jmorrrin" target="_blank" >
+                <i class="icon-linkedin-sign icon-2x"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </footer>
+    <script src="/js/jquery.js" type="text/javascript"></script>
+    <script src="/js/custom.modernizr.js" type="text/javascript"></script>
+    <script src="/js/foundation.min.js" type="text/javascript"></script>
+    <script src="/js/foundation/foundation.topbar.js" type="text/javascript"></script>
+    <script src="/js/jquery.js" type="text/javascript"></script>
+    
+  </body>
+</html>
