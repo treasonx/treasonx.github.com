@@ -70,4 +70,4 @@ and effeicient I will make sure to produce a few following.
 
 I have 30 days, we'll see how I feel at the end of the trial. I think I can get by with the Pixel and be plenty productive. But I am also aware I might run into some show stoppers. It'll be fun no matter what a new OS is always a fun thing to explore. At first you try to twist the OS into something that is familiar but as you use it you learn how the OS should be used. I hope to learn how ChromeOS should be used and see if its enough for a developer to be productive using. I think google has a
 great opportunity with ChromeOS. Windows has been dead for years, no one has told it yet :) OSX feels like it is being turned into a comsumer electronics device, which is fine for most people but not the developers out there. I know I always have a home with Linux, but it would be nice to have a corporate sponsor who can ensure that things pretty much just work. Again I know linux is pretty good! But I want to explore all of my options! Wish me luck and stay tuned for tutorials rans and me
-singing the praises of ChromeOS.
+singing the praises of ChromeOS. No matter what it should be fun!
