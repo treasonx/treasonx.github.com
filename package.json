@@ -2,9 +2,10 @@
   "name": "treasonx.com",
   "version": "0.0.0",
   "description": "Website",
-  "main": "index.js",
+  "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node_modules/docpad/bin/docpad-server",
+    "dev": "./node_modules/docpad/bin/docpad run"
   },
   "repository": "",
   "author": "James Morrin",
@@ -13,6 +14,15 @@
     "docpad-plugin-marked": "~2.1.0",
     "docpad-plugin-eco": "~2.0.1",
     "highlight.js": "~7.3.0",
-    "docpad-plugin-ghpages": "~2.0.0"
+    "docpad-plugin-ghpages": "~2.0.0",
+    "docpad": "*"
+  },
+  "subdomain": "treasonx",
+  "domains": [
+    "treasonx.com",
+    "www.treasonx.com"
+  ],
+  "engines": {
+    "node": "0.8.x"
   }
 }
