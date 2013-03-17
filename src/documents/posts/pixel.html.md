@@ -43,6 +43,7 @@ on the pixel to be productive.
   
   * [jshint](http://www.jshint.com)
   * [grunt](http://gruntjs.com)
+  * [git](http://git-scm.com)
 
 ###Objective
 
