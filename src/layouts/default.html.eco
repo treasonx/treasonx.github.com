@@ -16,7 +16,7 @@
     <div id="wrapper">
     <nav class="top-bar fixed">
       <ul class="title-area">
-        <li class="name"><h1 style="display:inline;"><a href="#">James Morrin</a></h1></li>
+        <li class="name"><h1 style="display:inline;"><a href="/">James Morrin</a></h1></li>
         <!--<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>-->
       </ul>
     </nav>

@@ -22,3 +22,11 @@ Needed to have vim startup in utf8 mode.
 
 ##Cons
 * escap ekey is very far and hard to hit
+
+###PhantomJS setup
+
+Download linux 64bit version put it somewhere on your path.. /usr/local/bin
+
+You will need to also install 
+apt-get install apt-get install libfreetype6
+apt-get install libfontconfig1
