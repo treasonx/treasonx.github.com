@@ -14,7 +14,6 @@
     "docpad-plugin-marked": "~2.1.0",
     "docpad-plugin-eco": "~2.0.1",
     "highlight.js": "~7.3.0",
-    "docpad-plugin-ghpages": "~2.0.0",
     "docpad": "*"
   },
   "subdomain": "treasonx",
@@ -23,6 +22,6 @@
     "www.treasonx.com"
   ],
   "engines": {
-    "node": "0.8.x"
+    "node": "~0.10.x"
   }
 }
