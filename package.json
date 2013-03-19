@@ -1,6 +1,6 @@
 {
   "name": "treasonx.com",
-  "version": "0.0.0-8",
+  "version": "0.0.0-9",
   "description": "Website",
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
