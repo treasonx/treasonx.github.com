@@ -1,0 +1,15 @@
+main {
+  width: 600px;
+  border: 1px solid black;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 7px;
+}
+
+.container {
+  border-radius: 7px;
+  padding: 10px;
+  margin: 25px;
+  border: 1px solid black;
+}
+

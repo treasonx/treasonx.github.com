@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Controller</title>
+    <link href="style/styles.css" type="text/css" rel="stylesheet">
+    <script src="lib/angular.js" type="text/javascript"></script>
+    <script src="controller.js" type="text/javascript"></script>
+  </head>
+  <body ng-app="neverDos">
+    <header><h1>Controller Demo</h1></header>
+    <main ng-controller="list">
+
+      <h3>Never Gonna Do</h3>
+      <ul>
+        <li ng-repeat="todo in todos">
+          <button ng-click="remove($index)">Nope</button> {{todo}}
+        </li>
+      </ul>
+
+      <form ng-submit="add()">
+        <input type="text" ng-model="newDo"></input>
+        <input type="submit" value="Add"></input>
+      </form>
+    </main>
+  </body>
+</html>

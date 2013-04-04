@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Scope Inheritance</title>
+    <link href="style/styles.css" type="text/css" rel="stylesheet">
+    <script src="lib/angular.js" type="text/javascript"></script>
+    <script src="mawmaw.js" type="text/javascript"></script>
+  </head>
+  <body ng-app="inheritance">
+    <header><h1>Scope Inheritance Demo</h1></header>
+    <main>
+      
+      <div class="container" ng-controller="mawmawCtrl">
+
+        <h2>MawMaw's name is {{name}}</h2>
+        <input ng-model="name" type="text"></input>
+
+        <div class="container" ng-controller="childCtrl">
+          <h3>Child's name is {{name}}</h3>
+          <input ng-model="name" type="text"></input>
+          <br>
+          <span>{{name}}'s MawMaw is {{$parent.name}}</span>
+        </div>
+
+      </div>
+        
+    </main>
+  </body>
+</html>

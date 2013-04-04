@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Simple Bindings</title>
+    <link href="style/styles.css" type="text/css" rel="stylesheet">
+    <script src="lib/angular.js" type="text/javascript"></script>
+  </head>
+  <body ng-app>
+    <header><h1>Simple Bindings</h1></header>
+    <main>
+      <button ng-click="showHai=!showHai" >Click Me</button> 
+      <h1 ng-show="showHai">Oh Hai</h1>
+
+      <h2>{{title}}</h2>
+      <h3>{{title | uppercase}}</h3>
+      <input ng-model="title" type="text"></input>
+
+      <br>
+
+      <input type="range" min="50" max="500"  ng-model="width"></input>
+      <br>
+
+      <img class="angry" src="assets/angry.gif" width="{{width}}">
+
+    </main>
+  </body>
+</html>

@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Getting Started with Angular</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <style>
+      .reveal section img {
+        border: none;
+        background: transparent;
+        box-shadow: none;
+      }
+    </style>
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+      
+<div class="slides">
+    <section>
+        <h1>getting started with angularjs</h1>
+        <a href="https://plus.google.com/106674157563775429543/posts">+James Morrin</a>
+        <br>
+    </p>
+    <p>
+    <img src="imgs/angular.png" style="border:none;box-shadow:none;">
+    <br>
+</p>
+<p>
+<br>
+</p>
+</section>
+<section>
+    <h2>Where do I begin?</h2>
+    <div>
+      <img src="imgs/whatImDoing.jpeg">
+    </div>
+</section>
+<section>
+    <h2>How is angular different?</h2>
+    <div>
+        <ul>
+            <li>Full testing story</li>
+            <li>Two way data bindings</li>
+            <li>Dependency Injection</li>
+            <li>Teach HTML new tricks</li>
+        </ul>
+    </div>
+</section>
+<section>
+    <h2>Use the Scope!</h2>
+    <div>
+      <img src="imgs/yoda.gif">
+    </div>
+</section>
+<section>
+    <h2>Simple Scope Demo</h2>
+    <div>
+        <a href="../code/simple.html">See the demo!</a>
+    </div>
+</section>
+<section>
+    <h2>What is the scope?</h2>
+    <div>
+        <ul>
+            <li>The "backbone" of your application</li>
+            <li>provides data to the views</li>
+            <li>acts as a pubsub</li>
+            <li>observes changes and notifies views</li>
+        </ul>
+    </div>
+</section>
+<section>
+    <h2>Controllers</h2>
+    <div>
+        <a href="../code/controller.html">Controller Demo</a>
+    </div>
+</section>
+<section>
+    <h2>Scope Life cycle</h2>
+    <div>Scope Life Cycle Demo</div>
+    <div>
+        <a href="../code/clock.html">Life Cycle  Demo</a>
+    </div>
+</section>
+<section>
+    <h2>Scope Inheritance</h2>
+    <div>
+        <a href="../code/mawmaw.html">Inheritance Demo</a>
+    </div>
+</section>
+<section>
+    <h2>Pubsub on the Scope!</h2>
+    <div>
+        <a href="../code/pubsub.html">PubSub Demo</a>
+    </div>
+</section>
+<section>
+    <h2>Tips</h2>
+    <div>
+        <ul>
+            <li>Dont fight angular</li>
+            <li>Look through the source</li>
+            <li>TDD</li>
+            <li>Baby Steps</li>
+            <li>Embrace the scope</li>
+            <li>Directives are not the answer</li>
+        </ul>
+    </div>
+</section>
+<section>
+    <h1>Resources!</h1>
+    <div>
+      <img src="imgs/catBath.gif" width="500">
+    </div>
+</section>
+<section>
+    <h2>The Official Docs</h2>
+    <img src="imgs/angularHome.png" width="500">
+    <div>
+      <a href="http://docs.angularjs.org/api/">API Docs</a><br>
+      <a href="http://docs.angularjs.org/guide/">Developer Guide</a>
+    </div>
+    <div>
+      <br>
+    <h3>But.....</h3>
+    </div>
+</section>
+<section>
+    <h2>They kinda suck!</h2>
+<blockquote>
+  The advantage of transclusion is that the linking function receives a transclusion function which is pre-bound to the correct scope. In a typical setup the widget creates an isolate scope, but the transclusion is not a child, but a sibling of the isolate scope. This makes it possible for the widget to have private state, and the transclusion to be bound to the parent (pre-isolate) scope.&nbsp;
+</blockquote>
+</section>
+<section>
+  <h2>WAT?</h2>
+  <img src="imgs/omgsnacks.gif">
+</section>
+    <section>
+        <h2>Video Resources</h2>
+        <img src="imgs/youtube.png" width="500">
+        <div>
+            <a href="http://egghead.io">egghead.io</a>
+        </div>
+        <div>
+            <a href="http://www.youtube.com/watch?v=ZhfUv0spHCY">Best Practices</a>
+        </div>
+    </section>
+    <section>
+        <h2>Code Examples</h2>
+        <div>
+            <a href="http://plnkr.co/">Plnkr.co</a>
+        </div>
+        <div>
+          <img src="imgs/plunker.png" width="800">
+        </div>
+    </section>
+    <section>
+        <h2>Yeoman.io</h2>
+        <div>
+            <a href="http://yeoman.io/">yoeman.io</a>
+        </div>
+        <div>
+          <img src="imgs/yeoman.png" style="border:none;">
+        </div>
+    </section>
+    <section>
+        <h2>The Source</h2>
+        <div>
+          <img src="imgs/github.png" style="border:none;">
+        </div>
+        <div>
+            <a href="https://github.com/angular/angular.js">github.com/angularjs/angular.js</a>
+        </div>
+    </section>
+    <section>
+        <h2>And one more thing...</h2>
+    </section>
+    <section>
+        <h2>The Angular Batarang!</h2>
+        <div>
+            <img src="imgs/batman.jpeg">
+            <br>
+        </div>
+        <div>
+            <br>
+        </div>
+        <div>
+            <a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk?hl=en">Get it in the Chrome Store</a>
+        </div>
+    </section>
+    <section>
+      <h2>Bombermine</h2>
+      <img src="imgs/bombermine.png" width="500">
+      <div>
+        <a href="http://bombermine.com/">bombermine.com</a>
+      </div>
+
+    </section>
+    <section>
+        <h2>Coming in future episodes...</h2>
+        <div>
+            <br>
+        </div>
+        <div>
+            <ul>
+                <li>Directives</li>
+                <li>Dependency Injection</li>
+                <li>Modules</li>
+                <li>Services</li>
+                <li>Routing</li>
+                <li>Testing!</li>
+                <li>Angular with other Libraries</li>
+            </ul>
+        </div>
+    </section>
+    <section>
+
+      <h1>THANKS!</h1>
+      <a href="http://bit.ly/introToAngular">bit.ly/introToAngular</a>
+      <br>
+      <a href="http://www.github.com/treasonx">github.com/treasonx</a>
+    </section>
+</div>
+      
+      
+     
+		</div>
+
+		<script src="lib/js/head.min"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
